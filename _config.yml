@@ -1,0 +1,6 @@
+markdown: rdiscount
+rdiscount:
+  extensions: [smart]
+permalink: pretty
+gems:
+- jekyll-sitemap
