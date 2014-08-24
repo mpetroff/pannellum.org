@@ -18,6 +18,7 @@
             "multiRes": {
                 "basePath": "./library",
                 "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
                 "extension": "jpg",
                 "tileResolution": 512,
                 "maxLevel": 6,
@@ -76,6 +77,7 @@
             "multiRes": {
                 "basePath": "./gallery",
                 "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
                 "extension": "jpg",
                 "tileResolution": 512,
                 "maxLevel": 5,
@@ -103,6 +105,7 @@
             "multiRes": {
                 "basePath": "./6th-floor",
                 "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
                 "extension": "jpg",
                 "tileResolution": 512,
                 "maxLevel": 4,
