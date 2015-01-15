@@ -3,7 +3,7 @@
         "firstScene": "library",
         "author": "Matthew Petroff",
         "header": "<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'><style>body{font-family: 'Source Sans Pro', sans-serif}</style>",
-        "autoload": "yes"
+        "autoLoad": true
     },
     
     "scenes": {
@@ -89,7 +89,8 @@
                     "yaw": 58,
                     "type": "scene",
                     "text": "Library",
-                    "sceneId": "library"
+                    "sceneId": "library",
+                    "targetYaw": 240
                 }
             ]
         },
