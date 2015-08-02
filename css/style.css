@@ -135,8 +135,15 @@ body {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
   background-color: #333;
+  margin: 0 auto;
 }
-
+.site-wrapper {
+  margin-bottom: -90px;
+  min-height: 100%;
+}
+.mastfoot, .site-wrapper:after {
+  height: 90px;
+}
 
 /*
  * Affix and center
@@ -147,10 +154,6 @@ body {
   .masthead {
     position: fixed;
     top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
