@@ -1,0 +1,28 @@
+types: ["simple", "intermediate", "advanced"]
+apiexample: >
+    <!DOCTYPE HTML>
+    
+    <html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>TITLE</title>
+        <link rel="stylesheet" href="PNLMBASE/PNLMVERSION/pannellum.css"/>
+        <script type="text/javascript" src="PNLMBASE/PNLMVERSION/pannellum.js"></script>
+    </head>
+    
+    <body>
+    
+    
+    <div id="panorama"></div>
+    
+    <script>
+    
+    pannellum.viewer('panorama', JSON);
+    
+    </script>
+    
+    
+    </body>
+    
+    </html>

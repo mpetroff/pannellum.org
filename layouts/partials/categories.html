@@ -1,0 +1,6 @@
+<ul class="nav nav-justified">
+  <li role="presentation"{{ if eq .Type "overview" }} class="active"{{ end }}><a href="{{ .Site.BaseURL }}/documentation/overview/">Overview<span class="hidden-sm"> & Tutorial</span></a></li>
+  <li role="presentation"{{ if in .Type "examples" }} class="active"{{ end }}><a href="{{ .Site.BaseURL }}/documentation/examples/simple-example/">Examples</a></li>
+  <li role="presentation"{{ if eq .Type "reference" }} class="active"{{ end }}><a href="{{ .Site.BaseURL }}/documentation/reference/">Config<span class="hidden-sm">uration</span> Reference</a></li>
+  <li role="presentation"{{ if eq .Type "api" }} class="active"{{ end }}><a href="{{ .Site.BaseURL }}/documentation/api/">API</a></li>
+</ul>

@@ -1,0 +1,54 @@
+{{ partial "header.html" . }}
+
+{{ $standalone := replace (replace .Params.config.standalone "PANORAMA" (print .Site.BaseURL .Params.panorama)) "BASEURL" .Site.BaseURL }}
+{{ $json := replace .Params.config.json "PANORAMA" (print .Site.BaseURL .Params.panorama) }}
+
+<!-- Main content -->
+<div class="row">
+  <div class="col-sm-9 col-sm-push-3">
+    {{ partial "categories.html" . }}
+    
+    <h2>{{ .Title }}</h2>
+    <p>{{ .Description | markdownify }}</p>
+
+    {{ if not (eq .Params.config.json nil) }}
+    <div id="panorama"></div>
+    <script>
+    pannellum.viewer('panorama', {{ $json | safeJS }});
+    </script>
+    {{ end }}
+    
+    {{ if not (eq .Params.config.standalone nil) }}
+    <h3>&lt;iframe&gt;</h3>
+    {{ highlight (print "<iframe width=\"600\" height=\"400\" allowfullscreen style=\"border-style:none;\" src=\"" .Site.Params.pnlmbase "/" .Site.Params.pnlmversion "/pannellum.htm?" (replace $standalone "&" "&amp;amp;") "\"></iframe>") "html" "" }}
+
+    <h3>Standalone</h3>
+    <a href="{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/pannellum.htm?{{ $standalone | safeURL }}">{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/pannellum.htm?{{ $standalone | safeHTML }}</a>
+    {{ end }}
+
+    {{ if not (eq .Params.config.json nil) }}
+    <h3>API</h3>
+    
+    {{ highlight (replace (replace (replace (replace .Site.Data.examples.apiexample "JSON" (chomp $json)) "TITLE" .Title) "PNLMBASE" .Site.Params.pnlmbase) "PNLMVERSION" .Site.Params.pnlmversion) "html" "" }}
+    {{ end }}
+
+    {{ .Content }}
+  </div>
+  <div class="col-sm-3 col-sm-pull-9">
+    <h4>
+      <strong>{{ title .Type }}</strong>
+    </h4>
+
+    {{ $pages := (where .Site.Pages "Type" .Type )}}
+    {{ range .Site.Data.examples.types }}
+      <h5><b>{{ . | title }}</b></h5>
+      <ul class="list-unstyled">
+        {{ range sort (where $pages "Params.example-type" .) "Title" }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </div>
+</div>
+
+{{ partial "footer.html" . }}

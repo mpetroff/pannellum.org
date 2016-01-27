@@ -1,0 +1,1 @@
+../../../pannellum/src/js/pannellum.js

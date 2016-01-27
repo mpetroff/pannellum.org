@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <title>API | Pannellum</title>
+
+  
+  <link rel="stylesheet" href="https://pannellum.org/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://pannellum.org/js/bootstrap-native.min.js"></script>
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="https://pannellum.org/css/pygments.css">
+
+  
+  <link rel="stylesheet" href="https://cdn.pannellum.org/2.2/pannellum.css"/>
+  <script type="text/javascript" src="https://cdn.pannellum.org/2.2/pannellum.js"></script>
+  
+
+  
+  <link rel="stylesheet" href="https://pannellum.org/css/style.css">
+
+</head>
+
+<body>
+
+
+<div class="site-wrapper">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+              <h1 class="masthead-brand">Pannellum</h1>
+              <div class="masthead-brand masthead-stars"><iframe src="//mdo.github.io/github-buttons/github-btn.html?user=mpetroff&amp;repo=pannellum&amp;type=watch&amp;count=true" style="border-style:none;background-color:transparent;overflow:hidden;" width="110" height="20"></iframe></div>
+              <div>
+                <ul class="nav masthead-nav">
+                  <li><a href="https://pannellum.org/">Home</a></li>
+                  <li><a href="https://pannellum.org/features/">Features</a></li>
+                  <li><a href="https://pannellum.org/download/">Download</a></li>
+                  <li class="active"><a href="https://pannellum.org/documentation/overview/">Documentation</a></li>
+                  
+                </ul>
+              </div>
+          </div>
+          
+          <div class="cover">
+
+
+
+<div class="row">
+  <div class="col-sm-9 col-sm-push-3">
+    <ul class="nav nav-justified">
+  <li role="presentation"><a href="https://pannellum.org/documentation/overview/">Overview<span class="hidden-sm"> & Tutorial</span></a></li>
+  <li role="presentation"><a href="https://pannellum.org/documentation/examples/simple-example/">Examples</a></li>
+  <li role="presentation"><a href="https://pannellum.org/documentation/reference/">Config<span class="hidden-sm">uration</span> Reference</a></li>
+  <li role="presentation" class="active"><a href="https://pannellum.org/documentation/api/">API</a></li>
+</ul>
+
+    
+    <h2>API</h2>
+
+    
+
+<h1 id="renderer">Renderer</h1>
+
+<p>Creates a new panorama renderer.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>container</code> <strong>HTMLElement</strong> The container element for the renderer.</li>
+<li><code>image</code> <strong>Image or Array or Object</strong> Input image; format varies based on
+     <code>imageType</code>. For <code>equirectangular</code>, this is an image; for <code>cubemap</code>,
+     this is an array of images for the cube faces in the order [+z, +x, -z,
+     -x, +y, -y]; for <code>multires</code>, this is a configuration object.</li>
+<li><code>imageType</code> <strong>string</strong> The type of the image: <code>equirectangular</code>,
+     <code>cubemap</code>, or <code>multires</code>.</li>
+<li><code>dynamic</code> <strong>boolean</strong> Whether or not the image is dynamic (e.g. video).</li>
+</ul>
+
+<h2 id="destroy">destroy</h2>
+
+<p>Destroy renderer.</p>
+
+<h2 id="getcanvas">getCanvas</h2>
+
+<p>Retrieve renderer&rsquo;s canvas.</p>
+
+<p>Returns <strong>HTMLElement</strong> Renderer&rsquo;s canvas.</p>
+
+<h2 id="init">init</h2>
+
+<p>Initialize renderer.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>haov</code> <strong>number</strong> Initial horizontal angle of view.</li>
+<li><code>vaov</code> <strong>number</strong> Initial vertical angle of view.</li>
+<li><code>voffset</code> <strong>number</strong> Initial vertical offset angle.</li>
+<li><code>callback</code> <strong>function</strong> Load callback function.</li>
+</ul>
+
+<h2 id="isloading">isLoading</h2>
+
+<p>Check if images are loading.</p>
+
+<p>Returns <strong>boolean</strong> Whether or not images are loading.</p>
+
+<h2 id="render">render</h2>
+
+<p>Render new view of panorama.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>pitch</code> <strong>number</strong> Pitch to render at.</li>
+<li><code>yaw</code> <strong>number</strong> Yaw to render at.</li>
+<li><code>hfov</code> <strong>number</strong> Horizontal field of view to render with.</li>
+<li><code>returnImage</code> <strong>boolean</strong> Return rendered image?</li>
+</ul>
+
+<h2 id="resize">resize</h2>
+
+<p>Resize renderer (call after resizing container).</p>
+
+<h1 id="viewer">Viewer</h1>
+
+<p>Creates a new panorama viewer.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>container</code> <strong>HTMLElement or string</strong> The container (div) element for the
+     viewer, or its ID.</li>
+<li><code>initialConfig</code> <strong>Object</strong> Inital configuration for viewer.</li>
+</ul>
+
+<h2 id="gethfov">getHfov</h2>
+
+<p>Returns the horizontal field of view.</p>
+
+<p>Returns <strong>number</strong> Horizontal field of view in degrees</p>
+
+<h2 id="gethfovbounds">getHfovBounds</h2>
+
+<p>Returns the minimum and maximum allowed horizontal fields of view
+(in degrees).</p>
+
+<p>Returns <strong>Array&lt;number&gt;</strong> [minimum hfov, maximum hfov]</p>
+
+<h2 id="getpitch">getPitch</h2>
+
+<p>Returns the pitch of the center of the view.</p>
+
+<p>Returns <strong>number</strong> Pitch in degrees</p>
+
+<h2 id="getpitchbounds">getPitchBounds</h2>
+
+<p>Returns the minimum and maximum allowed pitches (in degrees).</p>
+
+<p>Returns <strong>Array&lt;number&gt;</strong> [minimum pitch, maximum pitch]</p>
+
+<h2 id="getrenderer">getRenderer</h2>
+
+<p>Returns the panorama renderer.</p>
+
+<p>Returns <strong>Renderer</strong></p>
+
+<h2 id="getyaw">getYaw</h2>
+
+<p>Returns the yaw of the center of the view.</p>
+
+<p>Returns <strong>number</strong> Yaw in degrees</p>
+
+<h2 id="getyawbounds">getYawBounds</h2>
+
+<p>Returns the minimum and maximum allowed pitches (in degrees).</p>
+
+<p>Returns <strong>Array&lt;number&gt;</strong> [yaw pitch, maximum yaw]</p>
+
+<h2 id="mouseeventtocoords">mouseEventToCoords</h2>
+
+<p>Calculate panorama pitch and yaw from location of mouse event.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>event</code> <strong>MouseEvent</strong> Document mouse down event.</li>
+</ul>
+
+<p>Returns <strong>Array&lt;number&gt;</strong> [pitch, yaw]</p>
+
+<h2 id="sethfov">setHfov</h2>
+
+<p>Sets the horizontal field of view.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>hfov</code> <strong>number</strong> Horizontal field of view in degrees</li>
+</ul>
+
+<p>Returns <strong>Viewer</strong> <code>this</code></p>
+
+<h2 id="sethfovbounds">setHfovBounds</h2>
+
+<p>Set the minimum and maximum allowed horizontal fields of view (in degrees).</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>bounds</code> <strong>Array&lt;number&gt;</strong> [minimum hfov, maximum hfov]</li>
+</ul>
+
+<p>Returns <strong>Viewer</strong> <code>this</code></p>
+
+<h2 id="setpitch">setPitch</h2>
+
+<p>Sets the pitch of the center of the view.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>pitch</code> <strong>number</strong> Pitch in degrees</li>
+</ul>
+
+<p>Returns <strong>Viewer</strong> <code>this</code></p>
+
+<h2 id="setpitchbounds">setPitchBounds</h2>
+
+<p>Set the minimum and maximum allowed pitches (in degrees).</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>bounds</code> <strong>Array&lt;number&gt;</strong> [minimum pitch, maximum pitch]</li>
+</ul>
+
+<p>Returns <strong>Viewer</strong> <code>this</code></p>
+
+<h2 id="setupdate">setUpdate</h2>
+
+<p>Sets update flag for dynamic content.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>bool</code> <strong>boolean</strong> Whether or not viewer should update even when still</li>
+</ul>
+
+<p>Returns <strong>Viewer</strong> <code>this</code></p>
+
+<h2 id="setyaw">setYaw</h2>
+
+<p>Sets the yaw of the center of the view.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>yaw</code> <strong>number</strong> Yaw in degrees</li>
+</ul>
+
+<p>Returns <strong>Viewer</strong> <code>this</code></p>
+
+<h2 id="setyawbounds">setYawBounds</h2>
+
+<p>Set the minimum and maximum allowed yaws (in degrees).</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>bounds</code> <strong>Array&lt;number&gt;</strong> [minimum yaw, maximum yaw]</li>
+</ul>
+
+<p>Returns <strong>Viewer</strong> <code>this</code></p>
+
+  </div>
+  <div class="col-sm-3 col-sm-pull-9">
+    <h4>
+      <strong>API</strong>
+    </h4>
+    <div class="api-toc">
+      <nav id="TableOfContents">
+<ul>
+<li><a href="#renderer">Renderer</a>
+<ul>
+<li><a href="#destroy">destroy</a></li>
+<li><a href="#getcanvas">getCanvas</a></li>
+<li><a href="#init">init</a></li>
+<li><a href="#isloading">isLoading</a></li>
+<li><a href="#render">render</a></li>
+<li><a href="#resize">resize</a></li>
+</ul></li>
+<li><a href="#viewer">Viewer</a>
+<ul>
+<li><a href="#gethfov">getHfov</a></li>
+<li><a href="#gethfovbounds">getHfovBounds</a></li>
+<li><a href="#getpitch">getPitch</a></li>
+<li><a href="#getpitchbounds">getPitchBounds</a></li>
+<li><a href="#getrenderer">getRenderer</a></li>
+<li><a href="#getyaw">getYaw</a></li>
+<li><a href="#getyawbounds">getYawBounds</a></li>
+<li><a href="#mouseeventtocoords">mouseEventToCoords</a></li>
+<li><a href="#sethfov">setHfov</a></li>
+<li><a href="#sethfovbounds">setHfovBounds</a></li>
+<li><a href="#setpitch">setPitch</a></li>
+<li><a href="#setpitchbounds">setPitchBounds</a></li>
+<li><a href="#setupdate">setUpdate</a></li>
+<li><a href="#setyaw">setYaw</a></li>
+<li><a href="#setyawbounds">setYawBounds</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+  </div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<div class="mastfoot text-center">
+   <p>Pannellum is developed on <a href="https://github.com/mpetroff/pannellum">GitHub</a> by <a href="https://mpetroff.net/">Matthew Petroff</a>.</p>
+</div>
+
+</body>
+</html>
+

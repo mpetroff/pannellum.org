@@ -1,0 +1,1 @@
+../../../pannellum/src/standalone/standalone.js

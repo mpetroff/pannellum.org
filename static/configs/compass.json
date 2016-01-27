@@ -1,0 +1,6 @@
+{
+    "type": "equirectangular",
+    "panorama": "../images/bloomberg.jpg",
+    "compass": true,
+    "northOffset": 247.5
+}

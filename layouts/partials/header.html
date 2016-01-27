@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{ if .Params.description }}<meta name="description" content="{{ .Params.description | html }}">{{ end }}
+
+  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | absURL }}">
+  <script type="text/javascript" src="{{ "js/bootstrap-native.min.js" | absURL }}"></script>
+
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <!-- Pygments -->
+  <link rel="stylesheet" href="{{ "css/pygments.css" | absURL }}">
+
+  <!-- Pannellum -->
+  <link rel="stylesheet" href="{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/pannellum.css"/>
+  <script type="text/javascript" src="{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/pannellum.js"></script>
+  {{ if .Site.Params.testing }}<script type="text/javascript" src="{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/libpannellum.js"></script>{{ end }}
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="site-wrapper">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+              <h1 class="masthead-brand">Pannellum</h1>
+              <div class="masthead-brand masthead-stars"><iframe src="//mdo.github.io/github-buttons/github-btn.html?user=mpetroff&amp;repo=pannellum&amp;type=watch&amp;count=true" style="border-style:none;background-color:transparent;overflow:hidden;" width="110" height="20"></iframe></div>
+              <div>
+                <ul class="nav masthead-nav">
+                  <li{{ if .IsHome }} class="active"{{ end }}><a href="/">Home</a></li>
+                  <li{{ if eq .Title "Features" }} class="active"{{ end }}><a href="/features/">Features</a></li>
+                  <li{{ if eq .Title "Downloads" }} class="active"{{ end }}><a href="/download/">Download</a></li>
+                  <li{{ if eq .Section "documentation" }} class="active"{{ end }}><a href="/documentation/overview/">Documentation</a></li>
+                  <!--<li><a href="#">Forum</a></li>-->
+                </ul>
+              </div>
+          </div>
+          
+          <div class="cover">

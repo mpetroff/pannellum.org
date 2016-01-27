@@ -1,0 +1,17 @@
+baseurl: "https://pannellum.org"
+languagecode: "en-us"
+title: "Pannellum"
+pluralizelisttitles: false
+pygmentscodefences: true
+pygmentsuseclasses: true
+disableRSS: true
+canonifyurls: true
+blackfriday:
+  plainIDAnchors: true
+
+params:
+  pnlmbase: "https://cdn.pannellum.org"
+  pnlmversion: 2.2
+  pnlmversionfull: 2.2.0
+
+publishdir: "../pnlm-gh-pages"

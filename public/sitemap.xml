@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://pannellum.org/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/simple-example/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/auto-load/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/auto-rotate/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/compass/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/cube-map/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/download/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/features/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/hot-spots/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/imgur/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/initial-view/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/multiresolution/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/partial-panorama/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/preview-image/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/reference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/overview/tutorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/title-author/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/tour/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/video/</loc>
+  </url>
+  
+</urlset>

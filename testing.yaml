@@ -1,0 +1,16 @@
+baseurl: ""
+languagecode: "en-us"
+title: "Pannellum"
+pluralizelisttitles: false
+pygmentscodefences: true
+pygmentsuseclasses: true
+disableRSS: true
+canonifyurls: true
+blackfriday:
+  plainIDAnchors: true
+
+params:
+  pnlmbase: "/pnlm"
+  pnlmversion: "latest"
+  pnlmversionfull: "latest"
+  testing: true

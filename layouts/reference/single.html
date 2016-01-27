@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+
+<!-- Main content -->
+<div class="row">
+  <div class="col-sm-9 col-sm-push-3">
+    {{ partial "categories.html" . }}
+    
+    <h2>{{ .Title }}</h2>
+
+    {{ .Content }}
+  </div>
+  <div class="col-sm-3 col-sm-pull-9">
+    <h4>
+      <strong>Configuration Reference</strong>
+    </h4>
+    <ul class="list-unstyled">
+      <li><a href="{{ relref . "documentation/reference/index.md#url-configuration-parameters" }}">URL Configuration Parameters</a></li>
+      <li><a href="{{ relref . "documentation/reference/index.md#json-configuration-file-options" }}">JSON Configuration File Options</a></li>
+    </ul>
+  </div>
+</div>
+
+{{ partial "footer.html" . }}

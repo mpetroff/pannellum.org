@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <title>Pannellum</title>
+
+  
+  <link rel="stylesheet" href="https://pannellum.org/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://pannellum.org/js/bootstrap-native.min.js"></script>
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="https://pannellum.org/css/pygments.css">
+
+  
+  <link rel="stylesheet" href="https://cdn.pannellum.org/2.2/pannellum.css"/>
+  <script type="text/javascript" src="https://cdn.pannellum.org/2.2/pannellum.js"></script>
+  
+
+  
+  <link rel="stylesheet" href="https://pannellum.org/css/style.css">
+
+</head>
+
+<body>
+
+
+<div class="site-wrapper">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+              <h1 class="masthead-brand">Pannellum</h1>
+              <div class="masthead-brand masthead-stars"><iframe src="//mdo.github.io/github-buttons/github-btn.html?user=mpetroff&amp;repo=pannellum&amp;type=watch&amp;count=true" style="border-style:none;background-color:transparent;overflow:hidden;" width="110" height="20"></iframe></div>
+              <div>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="https://pannellum.org/">Home</a></li>
+                  <li><a href="https://pannellum.org/features/">Features</a></li>
+                  <li><a href="https://pannellum.org/download/">Download</a></li>
+                  <li><a href="https://pannellum.org/documentation/overview/">Documentation</a></li>
+                  
+                </ul>
+              </div>
+          </div>
+          
+          <div class="cover">
+
+
+
+
+<h1 class="cover-heading text-center">A Lightweight Panorama Viewer for the Web</h1>
+<p class="lead text-center">
+  Pannellum is a lightweight, free, and open source panorama viewer for the web. Built using HTML5, CSS3, JavaScript, and WebGL, it is plug-in free.
+</p>
+<p class="lead">
+  <div id="panorama" style="width:100%;height:390px;"></div>
+</p>
+
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "library",
+        "author": "Matthew Petroff",
+        "autoLoad": true
+    },
+    
+    "scenes": {
+        "library": {
+            "title": "George Peabody Library",
+            "hfov": 100,
+            "pitch": 10,
+            "yaw": 50,
+            "compass": true,
+            "northOffset": 289,
+            "type": "multires",
+            "multiRes": {
+                "basePath": "https:\/\/pannellum.org/images/multires/library",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 6,
+                "cubeResolution": 8432
+            },
+            "hotSpots": [
+                {
+                    "pitch": 60,
+                    "yaw": 60,
+                    "type": "info",
+                    "text": "The skylight is supported by an iron truss and has a second, peaked skylight over it."
+                },
+                {
+                    "pitch": 10,
+                    "yaw": 25,
+                    "type": "info",
+                    "text": "Much of the library was constructed from cast-iron to reduce the risk of fire."
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 8,
+                    "type": "info",
+                    "text": "The lighting was originally gas."
+                },
+                {
+                    "pitch": -3,
+                    "yaw": 115,
+                    "type": "info",
+                    "text": "The JHU library catalog contains the Peabody Library’s holdings.",
+                    "URL": "https://catalog.library.jhu.edu/"
+                },
+                {
+                    "pitch": -3,
+                    "yaw": 65,
+                    "type": "scene",
+                    "text": "Gallery",
+                    "sceneId": "gallery"
+                },
+                {
+                    "pitch": 47,
+                    "yaw": -135,
+                    "type": "scene",
+                    "text": "6th Floor",
+                    "sceneId": "6th-floor"
+                }
+            ]
+        },
+
+        "gallery": {
+            "title": "Gallery",
+            "hfov": 100,
+            "yaw": -20,
+            "type": "multires",
+            "compass": true,
+            "northOffset": 240,
+            "multiRes": {
+                "basePath": "https:\/\/pannellum.org/images/multires/gallery",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 5,
+                "cubeResolution": 4384
+            },
+            "hotSpots": [
+                {
+                    "pitch": -7,
+                    "yaw": -58,
+                    "type": "scene",
+                    "text": "Library",
+                    "sceneId": "library",
+                    "targetYaw": 240
+                }
+            ]
+        },
+        
+        "6th-floor": {
+            "title": "6th Floor",
+            "hfov": 100,
+            "pitch": -20,
+            "yaw": -20,
+            "compass": true,
+            "northOffset": 0,
+            "type": "multires",
+            "multiRes": {
+                "basePath": "https:\/\/pannellum.org/images/multires/6th-floor",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 3968
+            },
+            "hotSpots": [
+                {
+                    "pitch": -47.5,
+                    "yaw": -11,
+                    "type": "scene",
+                    "text": "Main Floor",
+                    "sceneId": "library"
+                },
+                {
+                    "pitch": -28,
+                    "yaw": -3,
+                    "type": "scene",
+                    "text": "Gallery",
+                    "sceneId": "gallery"
+                },
+                {
+                    "pitch": -20,
+                    "yaw": -165.7,
+                    "type": "info",
+                    "text": "The A B C of Prohibition",
+                    "URL": "https://catalyst.library.jhu.edu/catalog/bib_1121184"
+                }
+            ]
+        }
+    }
+});
+</script>
+
+
+</div>
+</div>
+</div>
+
+<div class="mastfoot text-center">
+   <p>Pannellum is developed on <a href="https://github.com/mpetroff/pannellum">GitHub</a> by <a href="https://mpetroff.net/">Matthew Petroff</a>.</p>
+</div>
+
+</body>
+</html>
+

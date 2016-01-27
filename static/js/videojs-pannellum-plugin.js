@@ -1,0 +1,1 @@
+../../pannellum/utils/video/videojs-pannellum-plugin.js
