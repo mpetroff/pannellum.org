@@ -8,7 +8,7 @@ description: >
     must be used.
 ---
 
-<link href="https://vjs.zencdn.net/5.4.6/video-js.css" rel="stylesheet" type="text/css">
+<link href="https://vjs.zencdn.net/5.4.6/video-js.css" rel="stylesheet" type="text/css" property="stylesheet">
 <script src="https://vjs.zencdn.net/5.4.6/video.js"></script>
 <script src="/js/videojs-pannellum-plugin.js"></script>
 

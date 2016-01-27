@@ -45,7 +45,7 @@
           <div style="max-width: 300px; margin: 0 auto;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150"><path fill="#aaa" d="m0 0v150l4.457-0.91797s68.671-14.113 145.54-14.113c76.872 0 145.54 14.113 145.54 14.113l4.46 0.92v-150l-4.457 0.91602s-68.671 14.113-145.54 14.113c-76.872 0-145.54-14.113-145.54-14.113zm7.4199 9.0098c11.163 2.1752 72 13.439 142.58 13.439s131.42-11.265 142.58-13.439v131.98c-11.16-2.17-72-13.44-142.58-13.44s-131.42 11.267-142.58 13.441zm159.82 63.144c-0.28454-0.51166-0.64312-0.99171-1.0333-1.4485-2.119-2.5791-5.2905-4.2747-8.8638-4.2747-3.585 0-6.7564 1.6856-8.8754 4.253-0.38936 0.4684-0.74877 0.94844-1.0541 1.4701-1.0633 1.7696-1.7072 3.8146-1.7072 6.0318 0 6.4794 5.2081 11.742 11.637 11.742 6.397 0 11.606-5.263 11.606-11.742-0.00083-2.2164-0.63313-4.2613-1.7089-6.0318m6.6083-1.5017c1.0341 2.3021 1.6448 4.8362 1.6448 7.5335 0 10.133-8.1283 18.359-18.15 18.359-10.035 0-18.161-8.2265-18.161-18.359 0-2.6972 0.60151-5.2314 1.644-7.5451h-32.43v27.665c0 3.7497 3.0017 6.8088 6.7356 6.8088h69.682c3.7222 0 6.7564-3.0592 6.7564-6.8088l0.0225-27.653zm-20.41-20.896h-7.1042v-3.4743h7.1042zm6.5126-4.8703h-20.059l-4.1324 6.1166h27.975zm21.819 2.5891h-8.254l-1.4643 3.4843h11.057zm-55.896 1.2047h-6.199l-0.71633 2.2588h7.4303zm31.463 11.147c6.6183 0 12.365 3.6449 15.537 9.0135l18.699 0.02163v-10.135c0-3.7713-3.0342-6.8305-6.7564-6.8305h-69.683c-3.7339 0-6.7356 3.0591-6.7356 6.8305l0.0191 10.049 33.372 0.02246c3.1948-5.3496 8.9179-8.9719 15.548-8.9719"/></svg>
           </div>
-          <p class="text-center" span style="color: #aaa; font-size: 30px;"><strong>Preview will appear here.</strong></span></p>
+          <p class="text-center" style="color: #aaa; font-size: 30px;"><strong>Preview will appear here.</strong></p>
         </div>
       </div>
     </li>
@@ -54,9 +54,9 @@
       <form>
         <div class="input-group">
           <input id="url" autocomplete="off" class="copyable form-control" readonly type="text" onfocus="this.select();" onmouseup="return false;">
-          <span class="input-group-btn">
-            <button class="btn btn-default copy-btn" disabled="disabled" type="button" data-target="url" title="Copy to Clipboard"><div class="copy-btn-icon">&nbsp;</div></button>
-          </span>
+          <div class="input-group-btn">
+            <div class="btn btn-default copy-btn" data-target="url" title="Copy to Clipboard"><div class="copy-btn-icon">&nbsp;</div></div>
+          </div>
         </div>
       </form>
     </li>
@@ -65,9 +65,9 @@
       <form>
         <div class="input-group">
           <input id="embed-code" autocomplete="off" class="copyable form-control" readonly type="text" onfocus="this.select();" onmouseup="return false;">
-          <span class="input-group-btn">
-            <button class="btn btn-default copy-btn" disabled="disabled" type="button" data-target="embed-code" title="Copy to Clipboard"><div class="copy-btn-icon">&nbsp;</div></button>
-          </span>
+          <div class="input-group-btn">
+            <div class="btn btn-default copy-btn" data-target="embed-code" title="Copy to Clipboard"><div class="copy-btn-icon">&nbsp;</div></div>
+          </div>
         </div>
       </form>
     </li>
@@ -112,8 +112,7 @@ function copyToClipboard(e) {
         e.target.tooltip.updateTooltip()
     }
 }
-//var copyBtns = document.getElementsByClassName('copy-btn');
-var copyBtns = document.querySelectorAll('.copy-btn');
+var copyBtns = document.getElementsByClassName('copy-btn');
 if (document.queryCommandSupported('copy')) {
     for (var i = 0; i < copyBtns.length; i++) {
         copyBtns[i].disabled = false;
