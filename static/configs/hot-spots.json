@@ -1,6 +1,6 @@
 {
     "type": "equirectangular",
-    "panorama": "/images/bma-1.jpg",
+    "panorama": "../images/bma-1.jpg",
     "hotSpots": [
         {
              "pitch": 14.1,
