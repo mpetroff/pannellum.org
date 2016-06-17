@@ -5,7 +5,9 @@ title: Tour
 description: >
     Multiple panoramas can be joined together into a virtual tour using
     Pannellum's tour feature. A fade animation between scenes can be configured
-    using the `sceneFadeDuration` parameter.
+    using the `sceneFadeDuration` parameter. See the
+    [hot spots example](../hot-spots/) for more information on placing the hot
+    spots used to navigate between scenes.
 config:
     standalone: config=/configs/tour.json
     json: >

@@ -5,13 +5,22 @@ title: Hot spots
 description: >
     Additional information can be displayed on the panorama using hot spots.
     The `hotSpotDebug` parameter exists to assist with locating where to place
-    hot spots. 
+    hot spots; when enabled, it prints the coordinates of mouse clicks to the
+    browser's developer console, which makes it much easier to figure out where
+    to place hot spots.
 config:
     standalone: config=BASEURL/configs/hot-spots.json
     json: >
         {
             "type": "equirectangular",
             "panorama": "/images/bma-1.jpg",
+            /*
+             * Uncomment the next line to print the coordinates of mouse clicks
+             * to the browser's developer console, which makes it much easier
+             * to figure out where to place hot spots. Always remove it when
+             * finished, though.
+             */
+            //"hotSpotDebug": true,
             "hotSpots": [
                 {
                     "pitch": 14.1,
