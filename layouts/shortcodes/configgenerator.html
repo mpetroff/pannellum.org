@@ -98,8 +98,12 @@ document.getElementById('form').addEventListener('submit', function(e) {
         embedCode3 = '"></iframe>';
     document.getElementById('embed-code').value = embedCode0 + '600' +
         embedCode1 + embedCode2 + embedCode3;
-    document.getElementById('result').innerHTML = embedCode0 + '100%' +
-        embedCode1 + 'display:block;' + embedCode2 + '&autoLoad=true' + embedCode3;
+    if (form.pano_url.value.slice(0, 7) == 'http://') {
+        document.getElementById('result').innerHTML = '<a href="' + url + '">' + url + '</a>';
+    } else {
+        document.getElementById('result').innerHTML = embedCode0 + '100%' +
+            embedCode1 + 'display:block;' + embedCode2 + '&autoLoad=true' + embedCode3;
+    }
 });
 
 function copyToClipboard(e) {
