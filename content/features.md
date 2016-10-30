@@ -9,7 +9,8 @@ title: Features
 * Plug-in free
 * Framework free
 * Video support
-* Just 15kB gzipped
+* API
+* Just 18kB gzipped
 
 ## Browser Compatibility
 

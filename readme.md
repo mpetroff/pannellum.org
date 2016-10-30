@@ -1,7 +1,7 @@
 # Pannellum.org
 
 This repository contains the source for [http://pannellum.org/](pannellum.org).
-The site is generated with [Hugo](https://gohugo.io/) v0.15. This repository
+The site is generated with [Hugo](https://gohugo.io/) v0.17. This repository
 contains the main Pannellum repository as a submodule to be able to directly
 use its documentation.
 

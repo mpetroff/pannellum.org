@@ -5,7 +5,8 @@ title: Downloads
 ### Pannellum CDN
 
 Although one can self-host Pannellum on virtually any web server as it is
-static content, a CDN is also provided for convenience.
+static content, a CDN is also provided for convenience (for low-to-medium
+traffic sites).
 ```html
 <!-- Latest compiled and minified standalone viewer -->
 {{% pnlmbase %}}/{{% pnlmversion %}}/pannellum.htm

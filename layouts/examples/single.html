@@ -23,7 +23,7 @@
     {{ highlight (print "<iframe width=\"600\" height=\"400\" allowfullscreen style=\"border-style:none;\" src=\"" .Site.Params.pnlmbase "/" .Site.Params.pnlmversion "/pannellum.htm?" (replace $standalone "&" "&amp;amp;") "\"></iframe>") "html" "" }}
 
     <h3>Standalone</h3>
-    <a href="{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/pannellum.htm?{{ $standalone | safeURL }}">{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/pannellum.htm?{{ $standalone | safeHTML }}</a>
+    <a href="{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/pannellum.htm?{{ $standalone | safeURL }}">{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/pannellum.htm#{{ $standalone | safeHTML }}</a>
     {{ end }}
 
     {{ if not (eq .Params.config.json nil) }}
