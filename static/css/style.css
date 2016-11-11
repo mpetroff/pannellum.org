@@ -104,11 +104,11 @@ body {
   font-weight: 600;
 }
 .site-wrapper {
-  margin-bottom: -50px;
+  margin-bottom: -65px;
   min-height: 100%;
 }
 .mastfoot, .site-wrapper:after {
-  height: 50px;
+  height: 65px;
 }
 
 
@@ -117,7 +117,7 @@ body {
  */
 
 .cover {
-  padding-bottom: 50px;
+  padding-bottom: 65px;
 }
 
 @media (min-width: 768px) {
