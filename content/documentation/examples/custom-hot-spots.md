@@ -141,18 +141,6 @@ function hotspot(hotSpotDiv, args) {
 </head>
 <body>
 
-<div id="panorama">
-    <div id="controls">
-        <div class="ctrl" id="pan-up">&#9650;</div>
-        <div class="ctrl" id="pan-down">&#9660;</div>
-        <div class="ctrl" id="pan-left">&#9664;</div>
-        <div class="ctrl" id="pan-right">&#9654;</div>
-        <div class="ctrl" id="zoom-in">&plus;</div>
-        <div class="ctrl" id="zoom-out">&minus;</div>
-        <div class="ctrl" id="fullscreen">&#x2922;</div>
-    </div>
-</div>
-
 <div id="panorama"></div>
 
 <script>
