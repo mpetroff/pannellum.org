@@ -106,6 +106,7 @@ document.getElementById('fullscreen').addEventListener('click', function(e) {
         text-align: center;
         background: rgba(200, 200, 200, 0.8);
         display: inline-block;
+        cursor: pointer;
     }
     .ctrl:hover {
         background: rgba(200, 200, 200, 1);
