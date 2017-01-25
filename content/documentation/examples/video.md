@@ -14,7 +14,7 @@ description: >
 
 <video id="panorama" class="video-js vjs-default-skin vjs-big-play-centered"
   controls preload="none" style="width:100%;height:400px;"
-  poster="/images/video/jfk-poster.jpg" data-setup="{}" crossorigin="anonymous">
+  poster="/images/video/jfk-poster.jpg" crossorigin="anonymous">
     <source src="/images/video/jfk.webm" type="video/webm"/>
     <source src="/images/video/jfk.mp4" type="video/mp4"/>
     <p class="vjs-no-js">
@@ -52,7 +52,7 @@ videojs('panorama', {
 
 <video id="panorama" class="video-js vjs-default-skin vjs-big-play-centered"
   controls preload="none" style="width:100%;height:400px;"
-  poster="/images/video/jfk-poster.jpg" data-setup="{}" crossorigin="anonymous">
+  poster="/images/video/jfk-poster.jpg" crossorigin="anonymous">
     <source src="/images/video/jfk.webm" type="video/webm"/>
     <source src="/images/video/jfk.mp4" type="video/mp4"/>
     <p class="vjs-no-js">
