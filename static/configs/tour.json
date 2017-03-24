@@ -12,7 +12,7 @@
             "pitch": -3,
             "yaw": 117,
             "type": "equirectangular",
-            "panorama": "/images/from-tree.jpg",
+            "panorama": "../images/from-tree.jpg",
             "hotSpots": [
                 {
                     "pitch": -2.1,
@@ -29,7 +29,7 @@
             "hfov": 110,
             "yaw": 5,
             "type": "equirectangular",
-            "panorama": "/images/bma-0.jpg",
+            "panorama": "../images/bma-0.jpg",
             "hotSpots": [
                 {
                     "pitch": -0.6,
