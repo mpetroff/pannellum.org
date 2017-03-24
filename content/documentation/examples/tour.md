@@ -9,7 +9,7 @@ description: >
     [hot spots example](../hot-spots/) for more information on placing the hot
     spots used to navigate between scenes.
 config:
-    standalone: config=/configs/tour.json
+    standalone: config=BASEURL/configs/tour.json
     json: >
         {   
             "default": {
