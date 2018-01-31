@@ -10,7 +10,7 @@ title: Features
 * Framework free
 * Video support
 * API
-* Just 18kB gzipped
+* Just 20kB gzipped
 
 ## Browser Compatibility
 
