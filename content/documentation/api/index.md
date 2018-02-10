@@ -44,6 +44,15 @@ Destroy renderer.
 
 Resize renderer (call after resizing container).
 
+## setPose
+
+Set renderer horizon pitch and roll.
+
+**Parameters**
+
+-   `horizonPitch`  
+-   `horizonRoll`  
+
 ## render
 
 Render new view of panorama.
@@ -79,6 +88,18 @@ Creates a new panorama viewer.
          viewer, or its ID.
 -   `initialConfig` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Inital configuration for viewer.
 
+## isLoaded
+
+Checks whether or not a panorama is loaded.
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** `true` if a panorama is loaded, else `false`
+
+## isLoaded
+
+Check if a panorama is loaded.
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** True if a panorama is loaded, else false
+
 ## getPitch
 
 Returns the pitch of the center of the view.
@@ -93,6 +114,8 @@ Sets the pitch of the center of the view.
 
 -   `pitch` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Pitch in degrees
 -   `animated` **\[([boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) \| [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))]** Animation duration in milliseconds or false for no animation (optional, default `1000`)
+-   `callback` **\[[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)]** Function to call when animation finishes
+-   `callbackArgs` **\[[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** Arguments to pass to callback function
 
 Returns **[Viewer](#viewer)** `this`
 
@@ -126,6 +149,8 @@ Sets the yaw of the center of the view.
 
 -   `yaw` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Yaw in degrees [-180, 180]
 -   `animated` **\[([boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) \| [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))]** Animation duration in milliseconds or false for no animation (optional, default `1000`)
+-   `callback` **\[[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)]** Function to call when animation finishes
+-   `callbackArgs` **\[[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** Arguments to pass to callback function
 
 Returns **[Viewer](#viewer)** `this`
 
@@ -159,6 +184,8 @@ Sets the horizontal field of view.
 
 -   `hfov` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Horizontal field of view in degrees
 -   `animated` **\[([boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) \| [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))]** Animation duration in milliseconds or false for no animation (optional, default `1000`)
+-   `callback` **\[[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)]** Function to call when animation finishes
+-   `callbackArgs` **\[[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** Arguments to pass to callback function
 
 Returns **[Viewer](#viewer)** `this`
 
@@ -189,6 +216,8 @@ Set a new view. Any parameters not specified remain the same.
 -   `yaw` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** Target yaw
 -   `hfov` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** Target hfov
 -   `animated` **\[([boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) \| [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))]** Animation duration in milliseconds or false for no animation (optional, default `1000`)
+-   `callback` **\[[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)]** Function to call when animation finishes
+-   `callbackArgs` **\[[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** Arguments to pass to callback function
 
 Returns **[Viewer](#viewer)** `this`
 
@@ -205,6 +234,38 @@ Sets the panorama's north offset.
 **Parameters**
 
 -   `heading` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** North offset in degrees
+
+Returns **[Viewer](#viewer)** `this`
+
+## getHorizonRoll
+
+Returns the panorama's horizon roll.
+
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Horizon roll in degrees
+
+## setHorizonRoll
+
+Sets the panorama's horizon roll.
+
+**Parameters**
+
+-   `roll` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Horizon roll in degrees [-90, 90]
+
+Returns **[Viewer](#viewer)** `this`
+
+## getHorizonPitch
+
+Returns the panorama's horizon pitch.
+
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Horizon pitch in degrees
+
+## setHorizonPitch
+
+Sets the panorama's horizon pitch.
+
+**Parameters**
+
+-   `pitch` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Horizon pitch in degrees [-90, 90]
 
 Returns **[Viewer](#viewer)** `this`
 
@@ -302,6 +363,12 @@ Get configuration of current scene.
 
 Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Configuration of current scene
 
+## getContainer
+
+Get viewer's container element.
+
+Returns **[HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)** Container `div` element
+
 ## addHotSpot
 
 Add a new hot spot.
@@ -325,6 +392,30 @@ Remove a hot spot.
 -   `hotSpotId` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The ID of the hot spot
 
 Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** True if deletion is successful, else false
+
+## resize
+
+This method should be called if the viewer's container is resized.
+
+## isOrientationSupported
+
+Check if device orientation control is supported.
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** True if supported, else false
+
+## stopOrientation
+
+Stop using device orientation.
+
+## startOrientation
+
+Start using device orientation (does nothing if not supported).
+
+## isOrientationActive
+
+Check if device orientation control is currently activated.
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** True if active, else false
 
 ## on
 
