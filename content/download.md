@@ -45,10 +45,14 @@ to browser security restrictions. With Python 2, one can use
 
 To use Pannellum, either `pannellum.htm` or `pannellum.js` and `pannellum.css` need to be placed on one's web server.
 
-<a href="https://pledgie.com/campaigns/27044"><img alt="Click here to lend your support to: Pannellum and make a donation at pledgie.com" src="https://pledgie.com/campaigns/27044.png?skin_name=chrome"></a>
 
 ## Building from Source
 
 The `utils/build` folder contains the required build tools, with the exception
 of Python 3.2+ and Java installations. To build a minified version of
 Pannellum, run either `build.sh` or `build.bat` depending on your platform.
+
+
+## Donations
+
+<a href="https://ko-fi.com/mpetroff" class="btn btn-info btn-lg" role="button"><img alt="Ko-fi logo" src="/images/ko-fi-logo.svg"> Buy Me a Tea</a>
