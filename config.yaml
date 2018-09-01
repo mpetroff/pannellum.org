@@ -4,7 +4,7 @@ title: "Pannellum"
 pluralizelisttitles: false
 pygmentscodefences: true
 pygmentsuseclasses: true
-disableKinds: ["RSS"]
+disableKinds: ["RSS", "taxonomy", "taxonomyTerm"]
 canonifyurls: true
 blackfriday:
   plainIDAnchors: true
