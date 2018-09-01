@@ -6,7 +6,7 @@ type: overview
 <div class="alert alert-info" role="alert">
 <strong>Quick and easy:</strong> If you just have a simple panorama that you want to display
 without anything fancy, read the
-<a class="alert-link" href="{{% ref "documentation/overview/tutorial.md" %}}">simple tutorial</a>.
+<a class="alert-link" href="{{% ref "/documentation/overview/tutorial.md" %}}">simple tutorial</a>.
 </div>
 
 Pannellum is built using WebGL and JavaScript, with a sprinkling of HTML5 and
@@ -25,7 +25,7 @@ parameter.
 
 Since Pannellum is static content, it can be hosted on virtually any web
 server. A CDN is also provided for convenience. For more information on getting
-Pannellum, see the [downloads page]({{% ref "download.md" %}}).
+Pannellum, see the [downloads page]({{% ref "/download.md" %}}).
 
 
 ### Panorama formats
@@ -57,10 +57,10 @@ to convert an image to it and the large number of files that must be hosted.
 Additional features of Pannellum include hot spots for displaying information,
 linking of multiple panoramas into virtual tours, and video support. The best
 way to learn about Pannellum's features and how to use them is to peruse the
-[examples]({{% ref "documentation/examples/simple-example.md" %}}) and
-[configuration reference]({{% ref "documentation/reference/index.md" %}}). Since it is not
+[examples]({{% ref "/documentation/examples/simple-example.md" %}}) and
+[configuration reference]({{% ref "/documentation/reference/index.md" %}}). Since it is not
 obvious from the examples, it is prudent to note that the `hotSpotDebug`
 parameter exists to aid in the placing of hot spots. It can be enabled while
 setting up the hot spots, but it should always be disabled in production.
 
-<a href="{{% ref "documentation/overview/tutorial.md" %}}" class="btn btn-default" role="button">Continue to simple tutorial &raquo;</a>
+<a href="{{% ref "/documentation/overview/tutorial.md" %}}" class="btn btn-default" role="button">Continue to simple tutorial &raquo;</a>
