@@ -8,8 +8,8 @@ description: >
     must be used.
 ---
 
-<link href="https://vjs.zencdn.net/5.4.6/video-js.css" rel="stylesheet" type="text/css" property="stylesheet">
-<script src="https://vjs.zencdn.net/5.4.6/video.js"></script>
+<link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet" type="text/css" property="stylesheet">
+<script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
 <script src="/js/videojs-pannellum-plugin.js"></script>
 
 <video id="panorama" class="video-js vjs-default-skin vjs-big-play-centered"
@@ -40,12 +40,12 @@ videojs('panorama', {
 <head>
     <meta charset="utf-8">
     <title>Pannellum Video Demo</title>
-    <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
-    <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
+    <link rel="stylesheet" href="https://cdn.pannellum.org/2.4/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.pannellum.org/2.4/pannellum.js"></script>
 
-    <link href="https://vjs.zencdn.net/5.4.6/video-js.css" rel="stylesheet"
+    <link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet"
       type="text/css">
-    <script src="https://vjs.zencdn.net/5.4.6/video.js"></script>
+    <script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
     <script src="/js/videojs-pannellum-plugin.js"></script>
 </head>
 <body>
