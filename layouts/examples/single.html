@@ -29,7 +29,7 @@
     {{ if not (eq .Params.config.json nil) }}
     <h3>API</h3>
     
-    {{ highlight (replace (replace (replace (replace .Site.Data.examples.apiexample "JSON" (chomp $json)) "TITLE" .Title) "PNLMBASE" .Site.Params.pnlmbase) "PNLMVERSION" .Site.Params.pnlmversion) "html" "" }}
+    {{ highlight (replace (replace (replace (replace .Site.Data.examples.apiexample "JSON" (chomp $json)) "TITLE" .Title) "PNLMBASE" .Site.Params.pnlmbase) "PNLMVERSIONFULL" .Site.Params.pnlmversionfull) "html" "" }}
     {{ end }}
 
     {{ .Content }}

@@ -12,10 +12,10 @@ traffic sites).
 {{% pnlmbase %}}/{{% pnlmversion %}}/pannellum.htm
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="{{% pnlmbase %}}/{{% pnlmversion %}}/pannellum.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@{{% pnlmversionfull %}}/build/pannellum.js"></script>
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="{{% pnlmbase %}}/{{% pnlmversion %}}/pannellum.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@{{% pnlmversionfull %}}/build/pannellum.css">
 ```
 
 ### Download
