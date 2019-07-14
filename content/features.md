@@ -29,3 +29,9 @@ browser to function.
 
 Pannellum is distributed under the
 [MIT License](https://github.com/mpetroff/pannellum/blob/master/COPYING).
+
+## Name
+
+The name _Pannellum_ was derived as a portmanteau of "panorama" and "vellum,"
+as this made a unique, pronounceable word, with "vellum" used as a
+quasi-synonym to the `<canvas>` drawing surface used by the viewer.
