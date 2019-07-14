@@ -11,7 +11,7 @@ blackfriday:
 
 params:
   pnlmbase: "https://cdn.pannellum.org"
-  pnlmversion: 2.4
-  pnlmversionfull: 2.4.0
+  pnlmversion: 2.5
+  pnlmversionfull: 2.5.1
 
 publishdir: "../pnlm-gh-pages"

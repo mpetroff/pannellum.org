@@ -273,6 +273,8 @@ Returns **[Viewer](#viewer)** `this`
 
 Start auto rotation.
 
+Before starting rotation, the viewer is panned to the initial pitch.
+
 **Parameters**
 
 -   `speed` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** Auto rotation speed / direction. If not specified, previous value is used.
@@ -284,6 +286,10 @@ Returns **[Viewer](#viewer)** `this`
 Stop auto rotation.
 
 Returns **[Viewer](#viewer)** `this`
+
+## stopMovement
+
+Stops all movement.
 
 ## getRenderer
 
@@ -390,6 +396,7 @@ Remove a hot spot.
 **Parameters**
 
 -   `hotSpotId` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The ID of the hot spot
+-   `sceneId` **\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** Removes hot spot from specified scene if provided, else from current scene
 
 Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** True if deletion is successful, else false
 

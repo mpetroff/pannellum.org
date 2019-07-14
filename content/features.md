@@ -10,7 +10,7 @@ title: Features
 * Framework free
 * Video support
 * API
-* Just 20kB gzipped
+* Just 21kB gzipped
 
 ## Browser Compatibility
 
@@ -19,20 +19,11 @@ browser to function.
 
 ### Full support (with appropriate graphics drivers):
 
-* Firefox 10+
-* Chrome 15+
+* Firefox 23+
+* Chrome 24+
 * Safari 8+
 * Internet Explorer 11+
 * Edge
-
-### Almost full support (no full screen):
-
-* Firefox 4+
-* Chrome 9+
-
-### No support:
-
-* Internet Explorer 10 and previous
 
 ## License
 

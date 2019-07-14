@@ -48,6 +48,13 @@ If set, the value is displayed as the panorama's author. If no author is
 desired, don't set this parameter.
 
 
+### `authorURL` (string)
+
+If set, the displayed author text is hyperlinked to this URL. If no author URL
+is desired, don't set this parameter. The `author` parameter must also be set
+for this parameter to have an effect.
+
+
 ### `strings` (dictionary)
 
 Allows user-facing strings to be changed / translated.
@@ -77,7 +84,8 @@ counter-clockwise, and negative is clockwise.
 
 Sets the delay, in milliseconds, to start automatically rotating the panorama
 after user activity ceases. This parameter only has an effect if the
-`autoRotate` parameter is set.
+`autoRotate` parameter is set. Before starting rotation, the viewer is panned
+to the initial pitch.
 
 
 ### `autoRotateStopDelay` (number)
@@ -123,6 +131,13 @@ viewer is fullscreen.
 If set to `false`, mouse and touch dragging is disabled. Defaults to `true`.
 
 
+### `friction` (number)
+
+Controls the "friction" that slows down the viewer motion after it is dragged
+and released. Higher values mean the motion stops faster. Should be set
+(0.0, 1.0]; defaults to 0.15.
+
+
 ### `disableKeyboardCtrl` (boolean)
 
 If set to `true`, keyboard controls are disabled. Defaults to `false`.
@@ -138,6 +153,11 @@ the fullscreen API.
 ### `showControls` (boolean)
 
 If set to `false`, no controls are displayed. Defaults to `true`.
+
+
+### `touchPanSpeedCoeffFactor` (number)
+
+Adjusts panning speed from touch inputs. Defaults to `1`.
 
 
 ### `yaw` (number)
@@ -171,7 +191,16 @@ Defaults to `undefined`, so the viewer center can reach `-90` / `90`.
 ### `minHfov` and `maxHfov` (number)
 
 Sets the minimum / maximum horizontal field of view, in degrees, that the
-viewer can be set to. Defaults to `50` / `120`.
+viewer can be set to. Defaults to `50` / `120`. Unless the `multiResMinHfov`
+parameter is set to `true`, the `minHfov` parameter is ignored for
+`multires` panoramas.
+
+
+### `multiResMinHfov` (boolean)
+
+When set to `false`, the `minHfov` parameter is ignored for `multires`
+panoramas; an automatically calculated minimum horizontal field of view is used
+instead. Defaults to `false`.
 
 
 ### `compass` (boolean)
@@ -229,9 +258,9 @@ This specifies the type of CORS request used and can be set to either
 `anonymous` or `use-credentials`. Defaults to `anonymous`.
 
 
-### `hotSpots` (array)
+### `hotSpots` (object)
 
-This specifies an array of hot spots that can be links to other scenes,
+This specifies a dictionary of hot spots that can be links to other scenes,
 information, or external links. Each array element has the following properties.
 
 
@@ -261,6 +290,11 @@ spot.
 If specified for an `info` hot spot, the hot spot links to the specified URL.
 Not applicable for `scene` hot spots.
 
+#### `attributes` (dict)
+
+Specifies URL's link attributes. If not set, the `target` attribute is set to
+`_blank`, to open link in new tab to avoid opening in viewer frame / page.
+
 #### `sceneId` (string)
 
 Specifies the ID of the scene to link to for `scene` hot spots. Not applicable
@@ -282,7 +316,9 @@ maintain the same direction with regard to north.
 
 #### `targetHfov` (number)
 
-Specifies the HFOV of the target scene, in degrees.
+Specifies the HFOV of the target scene, in degrees. Can also be set to `same`,
+which uses the current HFOV of the current scene as the initial HFOV of the
+target scene.
 
 #### `id`
 
@@ -316,6 +352,27 @@ Specifies the fade duration, in milliseconds, when transitioning between
 scenes. Not defined by default. Only applicable for tours. Only works with
 WebGL renderer.
 
+### `capturedKeyNumbers` (array)
+
+Specifies the key numbers that are captured in key events. Defaults to the
+standard keys that are used by the viewer.
+
+### `backgroundColor` ([number, number, number])
+
+Specifies an array containing RGB values [0, 1] that sets the background color
+for areas where no image data is available. Defaults to `[0, 0, 0]` (black).
+For partial `equirectangular` panoramas this applies to areas past the edges of
+the defined rectangle. For `multires` and `cubemap` (including fallback) panoramas
+this applies to areas corresponding to missing tiles or faces.
+
+### `avoidShowingBackground` (boolean)
+
+If set to `true`, prevent displaying out-of-range areas of a partial panorama
+by constraining the yaw and the field-of-view. Even at the corners and edges
+of the canvas only areas actually belonging to the image
+(i.e., within [`minYaw`, `maxYaw`] and [`minPitch`, `maxPitch`]) are shown,
+thus setting the `backgroundColor` option is not needed if this option is set.
+Defaults to `false`.
 
 
 ## `equirectangular` specific options
@@ -349,11 +406,6 @@ and the equirectangular image is not cropped symmetrically.
 If set to `true`, any embedded Photo Sphere XMP data will be ignored; else,
 said data will override any existing settings. Defaults to `false`.
 
-### `backgroundColor` ([number, number, number])
-
-Specifies an array containing RGB values [0, 1] that sets the background color
-shown past the edges of a partial panorama. Defaults to `[0, 0, 0]` (black).
-
 
 
 ## `cubemap` specific options
@@ -363,8 +415,7 @@ shown past the edges of a partial panorama. Defaults to `[0, 0, 0]` (black).
 This is an array of URLs for the six cube faces in the order front, right,
 back, left, up, down. These are relative to `basePath` if it is set, else they
 are relative to the location of `pannellum.htm`. Absolute URLs can also be
-used.
-
+used. Partial cubemap images may be specified by giving `null` instead of a URL.
 
 
 ## `multires` specific options
@@ -428,6 +479,12 @@ Currently, only equirectangular dynamic content is supported.
 The panorama source is considered dynamic when this is set to `true`. Defaults
 to `false`. This should be set to `true` for video.
 
+### `dynamicUpdate` (boolean)
+
+For dynamic content, viewer will start automatically updating when set to
+`true`. Defaults to `false`. If the updates are controlled via the `setUpdate`
+method, as with the Video.js plugin, this should be set to `false`.
+
 
 
 ## Additional information for tour configuration files
@@ -452,10 +509,26 @@ Fired when a scene change is initiated. A `load` event will be fired when the
 new scene finishes loading. Passes scene ID string to handler.
 
 
+## `fullscreenchange`
+
+Fired when browser fullscreen status changed. Passes status boolean to handler.
+
+
+## `zoomchange`
+
+Fired when scene hfov update. Passes new HFOV value to handler.
+
+
 ## `scenechangefadedone`
 
 If a scene transition fade interval is specified, this event is fired when the
 fading is completed after changing scenes.
+
+
+## `animatefinished`
+
+Fired when any movements / animations finish, i.e. when the renderer stops
+rendering new frames. Passes final pitch, yaw, and HFOV values to handler.
 
 
 ## `error`
@@ -487,3 +560,4 @@ Fired when a touch starts. Passes `TouchEvent` to handler.
 ## `touchend`
 
 Fired when a touch ends. Passes `TouchEvent` to handler.
+
