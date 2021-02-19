@@ -94,12 +94,6 @@ Checks whether or not a panorama is loaded.
 
 Returns **[boolean][8]** `true` if a panorama is loaded, else `false`
 
-### isLoaded
-
-Check if a panorama is loaded.
-
-Returns **[boolean][8]** True if a panorama is loaded, else false
-
 ### getPitch
 
 Returns the pitch of the center of the view.
