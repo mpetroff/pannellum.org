@@ -20,7 +20,7 @@
     
     {{ if not (eq .Params.config.standalone nil) }}
     <h3>&lt;iframe&gt;</h3>
-    {{ highlight (print "<iframe width=\"600\" height=\"400\" allowfullscreen style=\"border-style:none;\" src=\"" .Site.Params.pnlmbase "/" .Site.Params.pnlmversion "/pannellum.htm#" (replace $standalone "&" "&amp;amp;") "\"></iframe>") "html" "" }}
+    {{ highlight (print "<iframe width=\"600\" height=\"400\" allowfullscreen style=\"border-style:none;\" src=\"" .Site.Params.pnlmbase "/" .Site.Params.pnlmversion "/pannellum.htm#" (replace $standalone "&" "&amp;") "\"></iframe>") "html" "" }}
 
     <h3>Standalone</h3>
     <a href="{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/pannellum.htm#{{ $standalone | safeURL }}">{{ .Site.Params.pnlmbase }}/{{ .Site.Params.pnlmversion }}/pannellum.htm#{{ $standalone | safeHTML }}</a>
