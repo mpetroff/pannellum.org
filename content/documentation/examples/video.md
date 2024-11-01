@@ -40,8 +40,8 @@ videojs('panorama', {
 <head>
     <meta charset="utf-8">
     <title>Pannellum Video Demo</title>
-    <link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css"/>
-    <script type="text/javascript" src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@{{% pnlmversionfull %}}/build/pannellum.css">
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@{{% pnlmversionfull %}}/build/pannellum.js"></script>
 
     <link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet"
       type="text/css">

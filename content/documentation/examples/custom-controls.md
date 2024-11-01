@@ -18,6 +18,7 @@ description: >
     text-align: center;
     width: 100%;
     padding-bottom: 3px;
+    pointer-events: none;
 }
 .ctrl {
     padding: 8px 5px;
@@ -26,6 +27,7 @@ description: >
     background: rgba(200, 200, 200, 0.8);
     display: inline-block;
     cursor: pointer;
+    pointer-events: auto;
 }
 .ctrl:hover {
     background: rgba(200, 200, 200, 1);
@@ -84,8 +86,8 @@ document.getElementById('fullscreen').addEventListener('click', function(e) {
 <head>
     <meta charset="utf-8">
     <title>Custom controls</title>
-    <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
-    <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@{{% pnlmversionfull %}}/build/pannellum.css">
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@{{% pnlmversionfull %}}/build/pannellum.js"></script>
 
     <style>
     #panorama {

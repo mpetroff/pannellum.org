@@ -97,8 +97,8 @@ function hotspot(hotSpotDiv, args) {
 <head>
     <meta charset="utf-8">
     <title>Custom hot spots</title>
-    <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
-    <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@{{% pnlmversionfull %}}/build/pannellum.css">
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@{{% pnlmversionfull %}}/build/pannellum.js"></script>
 
     <style>
     #panorama {
